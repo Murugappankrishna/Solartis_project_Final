@@ -55,11 +55,12 @@ public class CartService {
 			String userName= cartImplementation.getUserName(cart.userCart.get("UserID"));
 			createPDF.createInvoice(cart.userCart.get("UserID"), modePayment,userName);// Function Call To Generate Bill
 			cartImplementation.updateProductQuantity();// Function Call To Update Quantity In Inventory
-			
+			createPDF.oppenPDF();// Function Call To Open The Generated PDF
 			mailService.sendMail();//Function Call To Send Mail To Notify Low Stock Products
 			transactionImplementation.insertData(modePayment);//Function Call To update Transaction Table
 			cartImplementation.deleteCart(cart.userCart.get("UserID"));// Function Call To Delete Cart Details 
 			System.out.println("Bill Generated ");
+
 		
 		}
 		

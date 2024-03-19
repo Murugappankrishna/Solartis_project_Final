@@ -13,7 +13,10 @@ import com.itextpdf.layout.property.UnitValue;
 import org.murugappan.DAO.CartDAO;
 import org.murugappan.DAO.CartImpl;
 
+import java.awt.*;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -142,5 +145,18 @@ public class CreatePDF {
             billReceipt.close();
         }
 
+    }
+    //  Method To Oppen The Generated Bill
+    void oppenPDF(){
+        String filePath = "invoice.pdf";
+        File pdfFile = new File(filePath);
+        if (pdfFile.exists()) {
+            try {
+
+                Desktop.getDesktop().open(pdfFile);// opening the Bill PDF File
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
