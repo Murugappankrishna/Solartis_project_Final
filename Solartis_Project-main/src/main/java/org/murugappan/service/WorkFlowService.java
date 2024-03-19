@@ -12,14 +12,14 @@ public class WorkFlowService {
     ProductsService productsService=new ProductsService();
     CartService cartService=new CartService();
     TransactionService transactionService=new TransactionService(); 
-    Scanner ip=new Scanner(System.in);
+    Scanner input =new Scanner(System.in);
     public String userFlag;
     App main = new App();
     //Method To Execute Login Services 
     public void login() {
     
     		System.out.println("Enter 1 To Register As A New User \nEnter 2 To Login As Existing User");
-    		int isNewUserOrExistingUser = ip.nextInt();
+    		int isNewUserOrExistingUser = input.nextInt();
     		 if (isNewUserOrExistingUser == 1) {
     			 userdetailsService.createUser();//Method Call TO Create USer
     			 login();
@@ -29,7 +29,8 @@ public class WorkFlowService {
     				 System.out.println(userFlag);
     			 }
     		 else
-    			 System.out.println("Eneter A Valid Input");
+    			 System.out.println("Eneter A Valid Input Exiting...");
+		//login();
     	        } 
     	
     // Method To Execute Product Services
@@ -38,7 +39,7 @@ public class WorkFlowService {
     		   int managerFunction;
     		   System.out.println("Welcome Manager!\nHave A Nice Day");
     		   System.out.println("Enter 1 To See All Products In The Inventory\nEnetr 2 To Add A Product\nEnter 3 To Edit A Product\nEnter 4 To Remove A Productt\nEnter 5 To Exit");
-    		   managerFunction=ip.nextInt();
+    		   managerFunction= input.nextInt();
     		   if(managerFunction==1) 
             	  productsService.showProducts();//Method Call To Show Products
             	else if(managerFunction==2)
@@ -59,7 +60,7 @@ public class WorkFlowService {
     		   System.out.println("Welcome SalesPerson!\nHave A Nice Day");
     		   System.out.println("Enetr 1 To Add A Product\nEnter 2 To Edit A Product\nEnter 3 To Remove A Product\nEnter 4 To Exit");
     		   int salespersonFunction;
-    		   salespersonFunction=ip.nextInt();
+    		   salespersonFunction= input.nextInt();
     		   if(salespersonFunction==1)
     			   productsService.addProduct();//Method Call To Add Products
     		   else if(salespersonFunction==2)
@@ -82,7 +83,7 @@ public class WorkFlowService {
     	if(userFlag.equals("MANAGER")) {
     		System.out.println("Welcome Manager\nHave A Nice Day");
     		System.out.println("Enter 1 To Show Profit For A Particular Date\nEnter 2 Get The Tax Paid For a Particular Month\nEnter 3 See The Items Sold\nEnter 4 To See The Products Based On Mode OF Payment\nEnter 5 To See Tax Paid For Each Product\nEnter 6 to exit");
-    		int managerFunction=ip.nextInt();
+    		int managerFunction= input.nextInt();
     		if(managerFunction==1)
     			transactionService.showProfitForADay();//Method Call To ShowProfit-Product
  		   else if(managerFunction==2)
@@ -105,7 +106,7 @@ public class WorkFlowService {
     	else if(userFlag.equals("SALESPERSON")){
     		System.out.println("Welcome SalesPerson!\nHave A Nice Day");
     		System.out.println("Enter 1 See The Items Sold\nEnter 2 To See The Products Based On Mode OF Payment\nEnter 3 To See Tax Paid For Each Product\nEnter 4 to exit");
-    		 int salespersonFunction=ip.nextInt();
+    		 int salespersonFunction= input.nextInt();
     		   if(salespersonFunction==1)
     			   transactionService.showItemBought();//Method Call To ShowItems Bought
     		   else if(salespersonFunction==2)

@@ -15,11 +15,11 @@ public class UserDetailsService {
     public String fetchRole() {
         String userRoll;
         System.out.println("Enter Your Name");
-        String name = input.next();
+        String name = input.nextLine();
         System.out.println("Enter Your Password");
-        input.next();
+        input.nextLine();
         System.out.println("ReEnter Your Password");
-        String password = input.next();
+        String password = input.nextLine();
         System.out.println("Validating....");
         System.out.println("------------------");
         System.out.println("------------------");
@@ -34,12 +34,12 @@ public class UserDetailsService {
 
 
         System.out.println("Enter Your Name");
-        credentials.userCredentials.put("Name", input.next());
+        credentials.userCredentials.put("Name", input.nextLine());
 
         System.out.println("Enter Your Password");
-        credentials.userCredentials.put("Password", input.next());
+        credentials.userCredentials.put("Password", input.nextLine());
         System.out.println("Enter Your Roll");
-        credentials.userCredentials.put("Roll", input.next().toUpperCase());
+        credentials.userCredentials.put("Roll", input.nextLine().toUpperCase());
         hashService.hashPassword();// Hashing The Password
 
         userCredentialsImplementation.createUserCredentials(credentials.userCredentials.get("Name"), credentials.userCredentials.get("Password"), credentials.userCredentials.get("Roll"));//Method Call To Save The User Details

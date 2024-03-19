@@ -14,7 +14,7 @@ Scanner ip=new Scanner(System.in);
 public void showProfitForADay() {
 	
 	System.out.println("Enter The Date To See The Profit Made On That Day In The Format Of YYYY-MM-DD");
-	String date= input.next();
+	String date= input.nextLine();
 	BigDecimal profit=transactionImpl.fetchProfitByDate(date);//Method Call To DAO to Show Profit 
 	if(profit!=null) {
 	System.out.println(profit);

@@ -38,7 +38,7 @@ public class CartService {
 		}//validation
 		else {
 		cartImplementation.addToCart(cart.userCart.get("UserID"),cart.userCart.get("ProductID"),cart.userCart.get("Quantity"));
-		cartImplementation.updateProductQuantity();// Function Call To Update Quantity In Inventory
+
 		}
 		System.out.print("Do Want More Products To Be added Enter 1 Else 2");
 		flag= input.nextInt();
@@ -46,6 +46,8 @@ public class CartService {
 		System.out.println("Your Products Has Been Added");
 		cartImplementation.showCart(cart.userCart.get("UserID"));//Function Call To Show Products In Cart
 		System.out.println("DO Want To Proceed To Billing Section Enter YES else NO");
+		input.next();
+		System.out.println("Confirm Again");
 		isBilling= input.next().toUpperCase();
 		if(isBilling.equals("YES")) {
 			System.out.println("Say Your Choice of Payment Mode");

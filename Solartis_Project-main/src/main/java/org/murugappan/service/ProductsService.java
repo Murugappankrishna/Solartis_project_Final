@@ -16,17 +16,17 @@ public class ProductsService {
     // Service Method To Add Products Into Cart
     public void addProduct() {
         System.out.println("Enter The Product Name");
-        details.productDetails.put("ProductName", input.next());
+        details.productDetails.put("ProductName", input.nextLine());
         System.out.println("Enter The Cost  Price");
-        details.productDetails.put("CostPrice", input.next());
+        details.productDetails.put("CostPrice", input.nextLine());
         System.out.println("Enter The Selling Price");
-        details.productDetails.put("SellingPrice", input.next());
+        details.productDetails.put("SellingPrice", input.nextLine());
         System.out.println("Enter The StockNo");
-        details.productDetails.put("Stock", input.next());
+        details.productDetails.put("Stock", input.nextLine());
         System.out.println("Enter The Product Description");
-        details.productDetails.put("Description", input.next());
+        details.productDetails.put("Description", input.nextLine());
         System.out.println("Enter The Tax Percent");
-        details.productDetails.put("Tax", input.next());
+        details.productDetails.put("Tax", input.nextLine());
         productsImplementation.addProducts(details.productDetails.get("ProductName"), details.productDetails.get("Description"), Integer.parseInt(details.productDetails.get("CostPrice")), Integer.parseInt(details.productDetails.get("SellingPrice")), Integer.parseInt(details.productDetails.get("Stock")), Integer.parseInt(details.productDetails.get("Tax"))); // Method Call TO Add Products
     }
 
